@@ -42,11 +42,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </form>
             </div>
             <div class="header-left">
-                <ul>
-                    <li ><a href="{{ url('loginpage') }}"  >Login</a></li>
-                    <li><a  href="{{ url('registerpage') }}"  >Register</a></li>
+                {% if app.user == null %}
+                    <ul>
+                        <li ><a href="{{ url('loginpage') }}"  >Login</a></li>
+                        <li><a  href="{{ url('registerpage') }}"  >Register</a></li>
 
-                </ul>
+                    </ul>
+                {% else %}
+                    <ul>
+                        <li ><a href="{{ url('logoutpage') }}"  >Logout</a></li>
+                    </ul>
+                {% endif %}
                 <div class="cart box_1">
                     <a href="{{ url('checkoutpage') }}">
                         <h3> <div class="total">
