@@ -75,14 +75,14 @@ class FormLoginAuthenticator extends AbstractFormLoginAuthenticator
     {
         $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
 
-        $url = $this->router->generate('login');
+        $url = $this->router->generate('loginpage');
 
         return new RedirectResponse($url);
     }
 
     protected function getLoginUrl()
     {
-        return $this->router->generate('login');
+        return $this->router->generate('loginpage');
     }
 
     protected function getDefaultSuccessRedirectUrl()
